@@ -24,11 +24,11 @@ Private client project delivery with Supabase, Cloudinary, UploadThing, Paystack
 Copy `.env.example` to `.env.local` and fill in:
 
 ```bash
-APP_URL=http://localhost:3000
+APP_URL=https://graphiqstudiox-client-delivery.vercel.app
+NEXT_PUBLIC_APP_URL=https://graphiqstudiox-client-delivery.vercel.app
 ADMIN_PASSWORD=
 ADMIN_SESSION_SECRET=
 
-NEXT_PUBLIC_APP_URL=https://your-app.vercel.app
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
