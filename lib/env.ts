@@ -14,11 +14,22 @@ function getRequiredEnv(name: string) {
 }
 
 export function getAppUrl() {
-  return (
+  const appUrl =
     getOptionalEnv("APP_URL") ??
-    getOptionalEnv("NEXT_PUBLIC_APP_URL") ??
-    "http://localhost:3000"
-  );
+    getOptionalEnv("NEXT_PUBLIC_APP_URL");
+
+  if (appUrl) {
+    return appUrl.replace(/\/$/, "");
+  }
+
+  const vercelUrl = getOptionalEnv("VERCEL_URL");
+  if (vercelUrl) {
+    return vercelUrl.startsWith("http")
+      ? vercelUrl.replace(/\/$/, "")
+      : `https://${vercelUrl.replace(/\/$/, "")}`;
+  }
+
+  return "http://localhost:3000";
 }
 
 export function getAdminPassword() {

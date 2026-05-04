@@ -28,6 +28,7 @@ APP_URL=http://localhost:3000
 ADMIN_PASSWORD=
 ADMIN_SESSION_SECRET=
 
+NEXT_PUBLIC_APP_URL=https://your-app.vercel.app
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
@@ -44,6 +45,8 @@ CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
 ```
+
+On Vercel, set `APP_URL` or `NEXT_PUBLIC_APP_URL` to your production domain, or rely on Vercel's `VERCEL_URL` runtime variable.
 
 Notes:
 
