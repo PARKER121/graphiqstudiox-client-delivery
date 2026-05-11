@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { claimProjectDownload, getProjectByToken } from "@/lib/projects";
 import { createDeliverableDownloadUrl } from "@/lib/uploadthing";
+import { rateLimit } from "@/lib/middleware/rateLimit";
 
 const imageExtensions = [
   "png",
@@ -39,6 +40,18 @@ function getPreviewDownloadUrl(previewUrl: string, format: string) {
 export const runtime = "nodejs";
 
 export async function GET(request: NextRequest) {
+  const clientIp = request.headers.get("x-forwarded-for") || "unknown";
+  const rateLimitKey = `download:${clientIp}`;
+
+  const limit = rateLimit(rateLimitKey, 30, 60 * 60 * 1000);
+
+  if (!limit.allowed) {
+    return NextResponse.json(
+      { error: "Too many download requests. Please try again later." },
+      { status: 429 },
+    );
+  }
+
   const token = request.nextUrl.searchParams.get("token");
   const format = (request.nextUrl.searchParams.get("format") ?? "zip").toLowerCase();
 

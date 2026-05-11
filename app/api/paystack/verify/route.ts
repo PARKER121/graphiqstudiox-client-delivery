@@ -2,15 +2,28 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { markProjectPaidFromWebhook } from "@/lib/projects";
 import { verifyPaystackTransaction } from "@/lib/paystack";
+import { rateLimit } from "@/lib/middleware/rateLimit";
 
 export const runtime = "nodejs";
 
 export async function GET(request: NextRequest) {
+  const clientIp = request.headers.get("x-forwarded-for") || "unknown";
+  const rateLimitKey = `verify:${clientIp}`;
+
+  const limit = rateLimit(rateLimitKey, 20, 60 * 60 * 1000);
+
+  if (!limit.allowed) {
+    return NextResponse.json(
+      { error: "Too many verification requests. Please try again later." },
+      { status: 429 },
+    );
+  }
+
   const reference = request.nextUrl.searchParams.get("reference");
 
   if (!reference) {
     return NextResponse.json(
-      { error: "Missing payment reference." }, 
+      { error: "Missing payment reference." },
       { status: 400 },
     );
   }

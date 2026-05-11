@@ -1,0 +1,36 @@
+
+> secure-client-delivery@0.1.0 lint
+> eslint
+
+
+C:\Users\ampon\Downloads\Compressed\graphiqstudiox-client-delivery-main\graphiqstudiox-client-delivery-main\app\admin\stats\page.tsx
+  5:10  warning  'getAppUrl' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\ampon\Downloads\Compressed\graphiqstudiox-client-delivery-main\graphiqstudiox-client-delivery-main\app\api\admin\report\route.ts
+  11:9   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  15:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  15:47  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\ampon\Downloads\Compressed\graphiqstudiox-client-delivery-main\graphiqstudiox-client-delivery-main\components\project-experience.tsx
+  76:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\ampon\Downloads\Compressed\graphiqstudiox-client-delivery-main\graphiqstudiox-client-delivery-main\components\project-experience.tsx:76:7
+  74 |   useEffect(() => {
+  75 |     if (!paymentProcessing || project.status !== "paid") {
+> 76 |       setShowUnlockCelebration(false);
+     |       ^^^^^^^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  77 |       return;
+  78 |     }
+  79 |  react-hooks/set-state-in-effect
+
+C:\Users\ampon\Downloads\Compressed\graphiqstudiox-client-delivery-main\graphiqstudiox-client-delivery-main\lib\projects.ts
+  6:3  warning  'AdminMonthlyStat' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 6 problems (4 errors, 2 warnings)
+

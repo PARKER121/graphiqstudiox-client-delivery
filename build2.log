@@ -1,0 +1,24 @@
+
+> secure-client-delivery@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 17.2s
+  Running TypeScript ...
+Failed to type check.
+
+./app/api/admin/report/route.ts:22:5
+Type error: Type 'string | number[] | undefined' is not assignable to type 'Color | undefined'.
+  Type 'string' is not assignable to type 'Color | undefined'.
+
+  [90m20 |[0m     size: options.size,
+  [90m21 |[0m     font: options.font,
+[31m[1m>[0m [90m22 |[0m     color: options.color,
+  [90m   |[0m     [31m[1m^[0m
+  [90m23 |[0m     maxWidth: options.maxWidth,
+  [90m24 |[0m     lineHeight: options.size * [35m1.25[0m,
+  [90m25 |[0m   });
+Next.js build worker exited with code: 1 and signal: null

@@ -1,0 +1,26 @@
+
+> secure-client-delivery@0.1.0 build
+> next build
+
+⚠ Invalid next.config.ts options detected: 
+⚠     Unrecognized key(s) in object: 'serverRuntimeConfig', 'api'
+⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+▲ Next.js 16.2.4 (Turbopack)
+- Environments: .env
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 22.3s
+  Running TypeScript ...
+Failed to type check.
+
+./next.config.ts:5:3
+Type error: Object literal may only specify known properties, and 'serverRuntimeConfig' does not exist in type 'NextConfig'.
+
+  [90m3 |[0m [36mconst[0m nextConfig: [33mNextConfig[0m = {
+  [90m4 |[0m   [90m/* config options here */[0m
+[31m[1m>[0m [90m5 |[0m   serverRuntimeConfig: {
+  [90m  |[0m   [31m[1m^[0m
+  [90m6 |[0m     [90m// Increase payload size limit[0m
+  [90m7 |[0m     bodyParser: {
+  [90m8 |[0m       sizeLimit: [32m"50mb"[0m,
+Next.js build worker exited with code: 1 and signal: null
