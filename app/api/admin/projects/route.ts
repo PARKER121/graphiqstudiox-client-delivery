@@ -8,6 +8,7 @@ import { createProject } from "@/lib/projects";
 import { uploadDeliverableFile } from "@/lib/uploadthing";
 
 export const runtime = "nodejs";
+export const maxDuration = 60;
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
