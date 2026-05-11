@@ -1,0 +1,2348 @@
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+⚠️ [uploadthing][deprecated] `file.url` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+⚠️ [uploadthing][deprecated] `file.appUrl` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/p/5d42ba4..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                          <body
+                            className="min-h-full flex flex-col"
+-                           __processed_265950e7-547f-401a-b4bf-59d8918dff5f__="true"
+                          >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/p/5d42ba4..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/p/5d42ba4..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                          <body
+                            className="min-h-full flex flex-col"
+-                           __processed_d42ebeae-2765-4f5b-81c7-5a84a21090d4__="true"
+                          >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/p/5d42ba4..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/p/5d42ba4..." notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+⚠️ [uploadthing][deprecated] `file.url` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+⚠️ [uploadthing][deprecated] `file.appUrl` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+⚠️ [uploadthing][deprecated] `file.url` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+⚠️ [uploadthing][deprecated] `file.appUrl` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+⚠️ [uploadthing][deprecated] `file.url` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+⚠️ [uploadthing][deprecated] `file.appUrl` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                          <body
+                            className="min-h-full flex flex-col"
+-                           __processed_b118a5c3-8c60-48a8-ba84-2b662711f1f8__="true"
+                          >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+⚠️ [uploadthing][deprecated] `file.url` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+⚠️ [uploadthing][deprecated] `file.appUrl` is deprecated and will be removed in uploadthing v9. Use `file.ufsUrl` instead.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html lang="en" className="manrope_de...">
+                          <body
+                            className="min-h-full flex flex-col"
+-                           __processed_85b6bcdf-dd45-4ab4-9bf1-038dde71e1d5__="true"
+                          >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ ReferenceError: stats is not defined
+    at AdminDashboard (components\admin-dashboard.tsx:163:10)
+  161 |         </div>
+  162 |
+> 163 |         {stats ? (
+      |          ^
+  164 |           <div className="mt-8 grid gap-4 sm:grid-cols-3">
+  165 |             <div className="rounded-[28px] border border-[var(--line)] bg-white/75 p-5">
+  166 |               <p className="text-xs uppercase tracking-[0.22em] text-[var(--foreground-mu... {
+  digest: '2900073881'
+}
+[browser] Uncaught ReferenceError: stats is not defined
+    at AdminDashboard (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/_12_dubu._.js:186:21)
+    at Object.react_stack_bottom_frame (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+    at AdminPage (app\admin\page.tsx:56:7)
+  54 |   return (
+  55 |     <main className="mx-auto min-h-screen w-full max-w-screen-2xl px-4 py-8 sm:px-10">
+> 56 |       <AdminDashboard
+     |       ^
+  57 |         adminLabel={admin.label}
+  58 |         appUrl={getAppUrl()}
+  59 |         projects={projects}
+⨯ ReferenceError: stats is not defined
+    at AdminDashboard (components\admin-dashboard.tsx:163:10)
+  161 |         </div>
+  162 |
+> 163 |         {stats ? (
+      |          ^
+  164 |           <div className="mt-8 grid gap-4 sm:grid-cols-3">
+  165 |             <div className="rounded-[28px] border border-[var(--line)] bg-white/75 p-5">
+  166 |               <p className="text-xs uppercase tracking-[0.22em] text-[var(--foreground-mu... {
+  digest: '2900073881'
+}
+[browser] Uncaught ReferenceError: stats is not defined
+    at AdminDashboard (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/_12_dubu._.js:186:21)
+    at Object.react_stack_bottom_frame (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+    at AdminPage (app\admin\page.tsx:56:7)
+  54 |   return (
+  55 |     <main className="mx-auto min-h-screen w-full max-w-screen-2xl px-4 py-8 sm:px-10">
+> 56 |       <AdminDashboard
+     |       ^
+  57 |         adminLabel={admin.label}
+  58 |         appUrl={getAppUrl()}
+  59 |         projects={projects}
+⨯ ReferenceError: stats is not defined
+    at AdminDashboard (components\admin-dashboard.tsx:163:10)
+  161 |         </div>
+  162 |
+> 163 |         {stats ? (
+      |          ^
+  164 |           <div className="mt-8 grid gap-4 sm:grid-cols-3">
+  165 |             <div className="rounded-[28px] border border-[var(--line)] bg-white/75 p-5">
+  166 |               <p className="text-xs uppercase tracking-[0.22em] text-[var(--foreground-mu... {
+  digest: '2900073881'
+}
+[browser] Uncaught ReferenceError: stats is not defined
+    at AdminDashboard (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/_12_dubu._.js:186:21)
+    at Object.react_stack_bottom_frame (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+    at AdminPage (app\admin\page.tsx:56:7)
+  54 |   return (
+  55 |     <main className="mx-auto min-h-screen w-full max-w-screen-2xl px-4 py-8 sm:px-10">
+> 56 |       <AdminDashboard
+     |       ^
+  57 |         adminLabel={admin.label}
+  58 |         appUrl={getAppUrl()}
+  59 |         projects={projects}
+⨯ ReferenceError: stats is not defined
+    at AdminDashboard (components\admin-dashboard.tsx:163:10)
+  161 |         </div>
+  162 |
+> 163 |         {stats ? (
+      |          ^
+  164 |           <div className="mt-8 grid gap-4 sm:grid-cols-3">
+  165 |             <div className="rounded-[28px] border border-[var(--line)] bg-white/75 p-5">
+  166 |               <p className="text-xs uppercase tracking-[0.22em] text-[var(--foreground-mu... {
+  digest: '2900073881'
+}
+[browser] Uncaught ReferenceError: stats is not defined
+    at AdminDashboard (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/_12_dubu._.js:186:21)
+    at Object.react_stack_bottom_frame (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:15037:24)
+    at renderWithHooks (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:4620:24)
+    at updateFunctionComponent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6081:21)
+    at beginWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6665:639)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9555:97)
+    at workLoopSync (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9449:40)
+    at renderRootSync (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9433:13)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9098:47)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64)
+    at AdminPage (app\admin\page.tsx:56:7)
+  54 |   return (
+  55 |     <main className="mx-auto min-h-screen w-full max-w-screen-2xl px-4 py-8 sm:px-10">
+> 56 |       <AdminDashboard
+     |       ^
+  57 |         adminLabel={admin.label}
+  58 |         appUrl={getAppUrl()}
+  59 |         projects={projects}
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/admin" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+                          className="manrope_de7b2fa9-module__1ltb7q__variable ibm_plex_mono_b8c3c420-module__vGkobG__..."
+-                         webcrx=""
+                        >
+                          <body
+                            className="min-h-full flex flex-col"
+-                           __processed_31615555-46b5-4b21-b3dc-484bcc42317c__="true"
+                          >
+                  ...
+ 
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:74)
+    at emitPendingHydrationWarnings (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3438:13)
+    at completeWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:6885:102)
+    at runWithFiberInDEV (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:965:131)
+    at completeUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9622:23)
+    at performUnitOfWork (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9557:28)
+    at workLoopConcurrentByScheduler (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9551:58)
+    at renderRootConcurrent (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9534:71)
+    at performWorkOnRoot (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:9061:150)
+    at performWorkOnRootViaSchedulerTask (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:10255:9)
+    at MessagePort.performWorkUntilDeadline (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_0rpq4pf._.js:2647:64) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_058-ah~._.js:3439:25)
+⨯ ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  [90m1 |[0m [36mimport[0m { [33mNextRequest[0m, [33mNextResponse[0m } [36mfrom[0m [32m"next/server"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mPDFDocument[0m, [33mStandardFonts[0m } [36mfrom[0m [32m"pdf-lib"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [36mimport[0m { requireAdminApiUser } [36mfrom[0m [32m"@/lib/auth"[0m;
+  [90m5 |[0m [36mimport[0m { deleteProjectsByYear, getAdminStatistics } [36mfrom[0m [32m"@/lib/projects"[0m;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+⨯ ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  [90m1 |[0m [36mimport[0m { [33mNextRequest[0m, [33mNextResponse[0m } [36mfrom[0m [32m"next/server"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mPDFDocument[0m, [33mStandardFonts[0m } [36mfrom[0m [32m"pdf-lib"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [36mimport[0m { requireAdminApiUser } [36mfrom[0m [32m"@/lib/auth"[0m;
+  [90m5 |[0m [36mimport[0m { deleteProjectsByYear, getAdminStatistics } [36mfrom[0m [32m"@/lib/projects"[0m;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+⨯ ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  [90m1 |[0m [36mimport[0m { [33mNextRequest[0m, [33mNextResponse[0m } [36mfrom[0m [32m"next/server"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mPDFDocument[0m, [33mStandardFonts[0m } [36mfrom[0m [32m"pdf-lib"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [36mimport[0m { requireAdminApiUser } [36mfrom[0m [32m"@/lib/auth"[0m;
+  [90m5 |[0m [36mimport[0m { deleteProjectsByYear, getAdminStatistics } [36mfrom[0m [32m"@/lib/projects"[0m;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  [90m1 |[0m [36mimport[0m { [33mNextRequest[0m, [33mNextResponse[0m } [36mfrom[0m [32m"next/server"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mPDFDocument[0m, [33mStandardFonts[0m } [36mfrom[0m [32m"pdf-lib"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [36mimport[0m { requireAdminApiUser } [36mfrom[0m [32m"@/lib/auth"[0m;
+  [90m5 |[0m [36mimport[0m { deleteProjectsByYear, getAdminStatistics } [36mfrom[0m [32m"@/lib/projects"[0m;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+⨯ ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  [90m1 |[0m [36mimport[0m { [33mNextRequest[0m, [33mNextResponse[0m } [36mfrom[0m [32m"next/server"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mPDFDocument[0m, [33mStandardFonts[0m } [36mfrom[0m [32m"pdf-lib"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [36mimport[0m { requireAdminApiUser } [36mfrom[0m [32m"@/lib/auth"[0m;
+  [90m5 |[0m [36mimport[0m { deleteProjectsByYear, getAdminStatistics } [36mfrom[0m [32m"@/lib/projects"[0m;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+⨯ ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  [90m1 |[0m [36mimport[0m { [33mNextRequest[0m, [33mNextResponse[0m } [36mfrom[0m [32m"next/server"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mPDFDocument[0m, [33mStandardFonts[0m } [36mfrom[0m [32m"pdf-lib"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m
+  [90m4 |[0m [36mimport[0m { requireAdminApiUser } [36mfrom[0m [32m"@/lib/auth"[0m;
+  [90m5 |[0m [36mimport[0m { deleteProjectsByYear, getAdminStatistics } [36mfrom[0m [32m"@/lib/projects"[0m;
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13891:21)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13335:52) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13828:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] Uncaught Error: ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./app/api/admin/report/route.ts:2:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+[browser] ./app/api/admin/report/route.ts:2:1
+Module not found: Can't resolve 'pdf-lib'
+  1 | import { NextRequest, NextResponse } from "next/server";
+> 2 | import { PDFDocument, StandardFonts } from "pdf-lib";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  3 |
+  4 | import { requireAdminApiUser } from "@/lib/auth";
+  5 | import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
+
+https://nextjs.org/docs/messages/module-not-found 
+    at handleErrors (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
+    at processMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2834:28)
+    at <unknown> (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2679:13)
+    at WebSocket.handleMessage (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2324:17) (file://C:/Users/ampon/Desktop/graphiq Studiox delievery site/.next/dev/static/chunks/node_modules_next_dist_client_0pe1dg-._.js:2773:21)
