@@ -67,24 +67,36 @@ export function AdminDashboard({
         method: "POST",
       });
 
-      // Read body only once as text, then parse
-      const responseText = await response.text();
+      // Handle error responses first
+      if (!response.ok) {
+        let errorMessage = `Server error: ${response.status} ${response.statusText}`;
+        
+        // Try to read error details from response
+        try {
+          const contentType = response.headers.get("content-type");
+          if (contentType?.includes("application/json")) {
+            const errorData = await response.json();
+            if (errorData.error) {
+              errorMessage = errorData.error;
+            }
+          }
+        } catch {
+          // If we can't parse the error response, just use the status text
+        }
+        
+        throw new Error(errorMessage);
+      }
+
+      // Parse successful response
       let responseBody: { error?: string; project?: ProjectRecord };
       
       try {
-        responseBody = JSON.parse(responseText) as {
-          error?: string;
-          project?: ProjectRecord;
-        };
+        responseBody = await response.json();
       } catch {
-        // If response is not valid JSON, provide error with status and preview
-        const errorMsg = responseText.slice(0, 200);
-        throw new Error(
-          `Server error: ${response.status} ${response.statusText}. ${errorMsg || "Invalid response format."}`
-        );
+        throw new Error("Invalid response format from server.");
       }
 
-      if (!response.ok || !responseBody.project?.token) {
+      if (!responseBody.project?.token) {
         throw new Error(responseBody.error ?? "Unable to create project.");
       }
 
