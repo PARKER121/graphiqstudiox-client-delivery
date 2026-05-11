@@ -48,23 +48,37 @@ export function AdminDashboard({
     try {
       const form = event.currentTarget;
       const formData = new FormData(form);
+      
+      // Validate file sizes before upload
+      const previewFile = formData.get("previewFile") as File | null;
+      const finalFile = formData.get("finalFile") as File | null;
+      const maxSize = 50 * 1024 * 1024; // 50MB limit
+      
+      if (previewFile && previewFile.size > maxSize) {
+        throw new Error(`Preview file is too large (${(previewFile.size / 1024 / 1024).toFixed(1)}MB). Maximum is 50MB.`);
+      }
+      
+      if (finalFile && finalFile.size > maxSize) {
+        throw new Error(`Final file is too large (${(finalFile.size / 1024 / 1024).toFixed(1)}MB). Maximum is 50MB.`);
+      }
 
       const response = await fetch("/api/admin/projects", {
         body: formData,
         method: "POST",
       });
 
+      // Read body only once as text, then parse
+      const responseText = await response.text();
       let responseBody: { error?: string; project?: ProjectRecord };
       
       try {
-        responseBody = (await response.json()) as {
+        responseBody = JSON.parse(responseText) as {
           error?: string;
           project?: ProjectRecord;
         };
       } catch {
-        // If response is not valid JSON, attempt to get text and provide error message
-        const text = await response.text();
-        const errorMsg = text.slice(0, 200); // First 200 chars for context
+        // If response is not valid JSON, provide error with status and preview
+        const errorMsg = responseText.slice(0, 200);
         throw new Error(
           `Server error: ${response.status} ${response.statusText}. ${errorMsg || "Invalid response format."}`
         );
