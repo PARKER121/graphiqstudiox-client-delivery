@@ -12,14 +12,14 @@ function drawText(
   text: string,
   x: number,
   y: number,
-  options: { size: number; font: PDFFont; color?: string | number[]; maxWidth?: number },
+  options: { size: number; font: PDFFont; color?: number[]; maxWidth?: number },
 ) {
   page.drawText(text, {
     x,
     y,
     size: options.size,
     font: options.font,
-    color: options.color,
+    color: options.color as any,
     maxWidth: options.maxWidth,
     lineHeight: options.size * 1.25,
   });
