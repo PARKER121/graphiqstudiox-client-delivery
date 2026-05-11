@@ -71,6 +71,7 @@ export function ProjectExperience({
     };
   }, [paymentProcessing, project.status]);
 
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     if (!paymentProcessing || project.status !== "paid") {
       setShowUnlockCelebration(false);
@@ -84,6 +85,7 @@ export function ProjectExperience({
 
     return () => window.clearTimeout(timerId);
   }, [paymentProcessing, project.status]);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   useEffect(() => {
     if (!paymentProcessing || project.status !== "paid") {

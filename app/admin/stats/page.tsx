@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { AdminLoginForm } from "@/components/admin-login-form";
 import { getCurrentAdminUser } from "@/lib/auth";
-import { getAppUrl } from "@/lib/env";
 import { getAdminStatistics, isSupabaseTableMissingError } from "@/lib/projects";
 import type { AdminStatistics } from "@/lib/types";
 

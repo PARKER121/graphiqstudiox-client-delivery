@@ -3,7 +3,6 @@ import "server-only";
 import { getSupabaseAdmin } from "@/lib/supabase";
 import { deleteDeliverableFile, parseDeliverableReference } from "@/lib/uploadthing";
 import type {
-  AdminMonthlyStat,
   AdminStatistics,
   PaymentRow,
   ProjectRecord,

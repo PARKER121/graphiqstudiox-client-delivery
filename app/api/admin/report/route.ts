@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { PDFDocument, StandardFonts } from "pdf-lib";
+import { PDFDocument, StandardFonts, type PDFPage, type PDFFont } from "pdf-lib";
 
 import { requireAdminApiUser } from "@/lib/auth";
 import { deleteProjectsByYear, getAdminStatistics } from "@/lib/projects";
@@ -8,11 +8,11 @@ import type { AdminStatistics } from "@/lib/types";
 export const runtime = "nodejs";
 
 function drawText(
-  page: any,
+  page: PDFPage,
   text: string,
   x: number,
   y: number,
-  options: { size: number; font: any; color?: any; maxWidth?: number },
+  options: { size: number; font: PDFFont; color?: string | number[]; maxWidth?: number },
 ) {
   page.drawText(text, {
     x,
