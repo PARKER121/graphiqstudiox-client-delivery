@@ -2,6 +2,8 @@
 
 Private client project delivery with Supabase, Cloudinary, UploadThing, Paystack, and Next.js App Router.
 
+**✅ Optimized for Vercel Hobby Plan (2048 MB memory limit)**
+
 ## What it does
 
 - Creates private `/p/[token]` delivery pages with no client login

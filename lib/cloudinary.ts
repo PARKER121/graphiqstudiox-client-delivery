@@ -1,48 +1,71 @@
 import "server-only";
 
-import { v2 as cloudinary } from "cloudinary";
-
+import crypto from "node:crypto";
 import { getCloudinaryConfig } from "@/lib/env";
 
-let configured = false;
-
-function getCloudinary() {
-  if (!configured) {
-    const config = getCloudinaryConfig();
-
-    cloudinary.config({
-      api_key: config.apiKey,
-      api_secret: config.apiSecret,
-      cloud_name: config.cloudName,
-      secure: true,
-    });
-
-    configured = true;
-  }
-
-  return cloudinary;
-}
-
+/**
+ * Upload preview to Cloudinary using REST API (lightweight)
+ * Removed Node SDK for Vercel Hobby plan memory optimization (2048 MB limit)
+ */
 export async function uploadPreviewToCloudinary(file: File, token: string) {
-  const bytes = Buffer.from(await file.arrayBuffer());
-
-  return new Promise<string>((resolve, reject) => {
-    const upload = getCloudinary().uploader.upload_stream(
+  const config = getCloudinaryConfig();
+  const bytes = await file.arrayBuffer();
+  
+  const formData = new FormData();
+  formData.append("file", new Blob([bytes], { type: file.type }));
+  formData.append("folder", "graphiq-studiox/previews");
+  formData.append(
+    "public_id",
+    `${token}-${file.name.replace(/\s+/g, "-").toLowerCase()}`,
+  );
+  formData.append("resource_type", "auto");
+  formData.append("api_key", config.apiKey);
+  
+  const timestamp = Math.floor(Date.now() / 1000);
+  const paramsToSign: Record<string, string | number> = {
+    api_key: config.apiKey,
+    folder: "graphiq-studiox/previews",
+    public_id: `${token}-${file.name.replace(/\s+/g, "-").toLowerCase()}`,
+    resource_type: "auto",
+    timestamp,
+  };
+  
+  const params = Object.entries(paramsToSign)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([key, value]) => `${key}=${value}`)
+    .join("&");
+  
+  const signature = crypto
+    .createHash("sha1")
+    .update(`${params}${config.apiSecret}`)
+    .digest("hex");
+  
+  formData.append("signature", signature);
+  formData.append("timestamp", String(timestamp));
+  
+  try {
+    const response = await fetch(
+      `https://api.cloudinary.com/v1_1/${config.cloudName}/auto/upload`,
       {
-        folder: "graphiq-studiox/previews",
-        public_id: `${token}-${file.name.replace(/\s+/g, "-").toLowerCase()}`,
-        resource_type: "auto",
-      },
-      (error, result) => {
-        if (error || !result?.secure_url) {
-          reject(error ?? new Error("Cloudinary preview upload failed."));
-          return;
-        }
-
-        resolve(result.secure_url);
+        method: "POST",
+        body: formData,
       },
     );
 
-    upload.end(bytes);
-  });
+    if (!response.ok) {
+      throw new Error(`Cloudinary upload failed: ${response.statusText}`);
+    }
+
+    const result = (await response.json()) as { secure_url?: string };
+    
+    if (!result.secure_url) {
+      throw new Error("Cloudinary did not return a secure URL");
+    }
+
+    return result.secure_url;
+  } catch (error) {
+    throw new Error(
+      `Preview upload failed: ${error instanceof Error ? error.message : "Unknown error"}`,
+    );
+  }
 }
