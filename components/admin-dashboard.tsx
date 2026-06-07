@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 import { formatPriceFromMinor } from "@/lib/currency";
 import type { ProjectRecord } from "@/lib/types";
@@ -33,6 +33,27 @@ export function AdminDashboard({
   const [error, setError] = useState<string | null>(null);
   const [successLink, setSuccessLink] = useState<string | null>(null);
   const shareBaseUrl = appUrl.replace(/\/$/, "");
+
+  // Load projects from Supabase on mount and periodically refresh
+  useEffect(() => {
+    async function loadProjects() {
+      try {
+        const response = await fetch("/api/admin/projects");
+        if (response.ok) {
+          const data = (await response.json()) as { projects: ProjectRecord[] };
+          setProjectItems(data.projects);
+        }
+      } catch {
+        // Silently fail - projects will remain as initially loaded
+      }
+    }
+
+    loadProjects();
+    
+    // Refresh projects every 30 seconds to stay in sync with database
+    const interval = setInterval(loadProjects, 30000);
+    return () => clearInterval(interval);
+  }, []);
 
   async function handleLogout() {
     await fetch("/api/admin/logout", { method: "POST" });

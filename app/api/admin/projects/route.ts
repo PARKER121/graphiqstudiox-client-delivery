@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { requireAdminApiUser } from "@/lib/auth";
 import { uploadPreviewToCloudinary } from "@/lib/cloudinary";
-import { createProject } from "@/lib/projects";
+import { createProject, listProjects } from "@/lib/projects";
 import { uploadDeliverableFile } from "@/lib/uploadthing";
 
 export const runtime = "nodejs";
@@ -106,6 +106,22 @@ export async function POST(request: NextRequest) {
       {
         error:
           error instanceof Error ? error.message : "Unable to create project.",
+      },
+      { status: 500 },
+    );
+  }
+}
+
+export async function GET(request: NextRequest) {
+  try {
+    await requireAdminApiUser(request);
+    const projects = await listProjects();
+    return NextResponse.json({ projects });
+  } catch (error) {
+    return NextResponse.json(
+      {
+        error:
+          error instanceof Error ? error.message : "Unable to fetch projects.",
       },
       { status: 500 },
     );
