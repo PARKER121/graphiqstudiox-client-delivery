@@ -1,18 +1,12 @@
 import Link from "next/link";
 
+import { AdminStatsDisplay } from "@/components/admin-stats-display";
 import { AdminLoginForm } from "@/components/admin-login-form";
 import { getCurrentAdminUser } from "@/lib/auth";
 import { getAdminStatistics, isSupabaseTableMissingError } from "@/lib/projects";
 import type { AdminStatistics } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
-
-function formatPrice(amount: number) {
-  return new Intl.NumberFormat("en-GH", {
-    style: "currency",
-    currency: "GHS",
-  }).format(amount / 100);
-}
 
 export default async function AdminStatsPage() {
   const admin = await getCurrentAdminUser();
@@ -100,61 +94,10 @@ export default async function AdminStatsPage() {
             </div>
           ) : null}
 
-          {stats ? (
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              <div className="rounded-[28px] border border-[var(--line)] bg-white/75 p-5">
-                <p className="text-xs uppercase tracking-[0.22em] text-[var(--foreground-muted)]">
-                  Total sales ({stats.year})
-                </p>
-                <p className="mt-3 text-2xl font-semibold text-[var(--foreground)]">
-                  {formatPrice(stats.totalSales)}
-                </p>
-              </div>
-              <div className="rounded-[28px] border border-[var(--line)] bg-white/75 p-5">
-                <p className="text-xs uppercase tracking-[0.22em] text-[var(--foreground-muted)]">
-                  Clients paid this year
-                </p>
-                <p className="mt-3 text-2xl font-semibold text-[var(--foreground)]">
-                  {stats.totalClients}
-                </p>
-              </div>
-              <div className="rounded-[28px] border border-[var(--line)] bg-white/75 p-5">
-                <p className="text-xs uppercase tracking-[0.22em] text-[var(--foreground-muted)]">
-                  Clients this month
-                </p>
-                <p className="mt-3 text-2xl font-semibold text-[var(--foreground)]">
-                  {stats.clientsThisMonth}
-                </p>
-              </div>
-            </div>
-          ) : null}
-
-          {stats ? (
-            <div className="mt-8 rounded-[28px] border border-[var(--line)] bg-white/75 p-5">
-              <div className="overflow-x-auto">
-                <table className="min-w-full text-left text-sm text-[var(--foreground-muted)]">
-                  <thead>
-                    <tr>
-                      <th className="py-3 pr-6 font-medium text-[var(--foreground)]">Month</th>
-                      <th className="py-3 pr-6 font-medium text-[var(--foreground)]">Sales</th>
-                      <th className="py-3 font-medium text-[var(--foreground)]">Clients</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {stats.monthlyStats.map((monthStat) => (
-                      <tr key={monthStat.month} className="border-t border-[var(--line)]">
-                        <td className="py-3 pr-6 font-medium text-[var(--foreground)]">
-                          {monthStat.month}
-                        </td>
-                        <td className="py-3 pr-6">{formatPrice(monthStat.amount)}</td>
-                        <td className="py-3">{monthStat.clients}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          ) : null}
+          <AdminStatsDisplay
+            initialStats={stats}
+            initialYear={new Date().getUTCFullYear()}
+          />
         </section>
       </div>
     </main>
