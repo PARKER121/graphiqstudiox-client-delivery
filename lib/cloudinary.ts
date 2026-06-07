@@ -18,14 +18,12 @@ export async function uploadPreviewToCloudinary(file: File, token: string) {
     "public_id",
     `${token}-${file.name.replace(/\s+/g, "-").toLowerCase()}`,
   );
-  formData.append("resource_type", "auto");
   formData.append("api_key", config.apiKey);
   
   const timestamp = Math.floor(Date.now() / 1000);
   const paramsToSign: Record<string, string | number> = {
     folder: "graphiq-studiox/previews",
     public_id: `${token}-${file.name.replace(/\s+/g, "-").toLowerCase()}`,
-    resource_type: "auto",
     timestamp,
   };
   
