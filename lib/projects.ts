@@ -65,33 +65,73 @@ function mapProjectRow(row: ProjectRow): ProjectRecord {
 const PROJECT_EXPIRATION_DAYS = 5;
 const PROJECT_EXPIRATION_MS = PROJECT_EXPIRATION_DAYS * 24 * 60 * 60 * 1000;
 
-async function cleanupExpiredProjects() {
-  const supabase = getSupabaseAdmin();
-  const expirationThreshold = new Date(Date.now() - PROJECT_EXPIRATION_MS).toISOString();
-
-  const { data: expiredProjects, error } = await supabase
-    .from("projects")
-    .select("id")
-    .lt("created_at", expirationThreshold)
-    .returns<Pick<ProjectRow, "id">[]>();
-
-  if (error) {
-    throw new Error(error.message);
+// Check if Supabase is properly configured
+function isSupabaseConfigured(): boolean {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+  
+  // Skip cleanup if using placeholder/default values
+  if (
+    url.includes("your-project") ||
+    url.includes("example") ||
+    url === "" ||
+    key === "" ||
+    key.includes("your_")
+  ) {
+    return false;
   }
+  
+  return true;
+}
 
-  if (!expiredProjects?.length) {
+async function cleanupExpiredProjects() {
+  // Skip cleanup entirely if Supabase isn't configured properly
+  // This prevents slow timeout waits on unconfigured deployments
+  if (!isSupabaseConfigured()) {
     return;
   }
 
-  await Promise.all(
-    expiredProjects.map(async (project) => {
-      try {
-        await deleteProjectById(project.id);
-      } catch {
-        // Best-effort cleanup: keep removing other expired records.
+  try {
+    const supabase = getSupabaseAdmin();
+    const expirationThreshold = new Date(Date.now() - PROJECT_EXPIRATION_MS).toISOString();
+
+    // Create a promise that races with a timeout
+    const cleanupPromise = (async () => {
+      const { data: expiredProjects, error } = await supabase
+        .from("projects")
+        .select("id")
+        .lt("created_at", expirationThreshold)
+        .returns<Pick<ProjectRow, "id">[]>();
+
+      if (error) {
+        return;
       }
-    }),
-  );
+
+      if (!expiredProjects?.length) {
+        return;
+      }
+
+      await Promise.all(
+        expiredProjects.map(async (project) => {
+          try {
+            await deleteProjectById(project.id);
+          } catch {
+            // Best-effort cleanup
+          }
+        }),
+      );
+    })();
+
+    // Set a 2 second timeout for cleanup - if it takes longer, abort
+    const timeoutPromise = new Promise<void>((resolve) => {
+      setTimeout(resolve, 2000);
+    });
+
+    // Race the cleanup against the timeout
+    await Promise.race([cleanupPromise, timeoutPromise]);
+  } catch {
+    // Silently fail - cleanup is not critical for page rendering
+  }
 }
 
 function formatMonthLabel(index: number) {
@@ -103,75 +143,137 @@ function formatMonthLabel(index: number) {
 export async function getAdminStatistics(
   year = new Date().getUTCFullYear(),
 ): Promise<AdminStatistics> {
-  const supabase = getSupabaseAdmin();
-  const startOfYear = new Date(Date.UTC(year, 0, 1)).toISOString();
-  const startOfNextYear = new Date(Date.UTC(year + 1, 0, 1)).toISOString();
-
-  const { data: payments, error } = await supabase
-    .from("payments")
-    .select("project_id, amount, created_at")
-    .eq("status", "success")
-    .gte("created_at", startOfYear)
-    .lt("created_at", startOfNextYear)
-    .returns<{ project_id: string; amount: number; created_at: string }[]>();
-
-  if (error) {
-    throw new Error(error.message);
+  // Return empty stats immediately if Supabase isn't configured
+  if (!isSupabaseConfigured()) {
+    return {
+      year,
+      totalSales: 0,
+      totalClients: 0,
+      clientsThisMonth: 0,
+      monthlyStats: Array.from({ length: 12 }, (_, index) => ({
+        month: formatMonthLabel(index),
+        amount: 0,
+        clients: 0,
+      })),
+    };
   }
 
-  const monthlyStats: Array<{
-    month: string;
-    amount: number;
-    clients: Set<string>;
-  }> = Array.from({ length: 12 }, (_, index) => ({
-    month: formatMonthLabel(index),
-    amount: 0,
-    clients: new Set<string>(),
-  }));
+  try {
+    const supabase = getSupabaseAdmin();
+    const startOfYear = new Date(Date.UTC(year, 0, 1)).toISOString();
+    const startOfNextYear = new Date(Date.UTC(year + 1, 0, 1)).toISOString();
 
-  const totalClients = new Set<string>();
-  let totalSales = 0;
+    // Create the stats query with a timeout
+    const statsPromise = (async () => {
+      const { data: payments, error } = await supabase
+        .from("payments")
+        .select("project_id, amount, created_at")
+        .eq("status", "success")
+        .gte("created_at", startOfYear)
+        .lt("created_at", startOfNextYear)
+        .returns<{ project_id: string; amount: number; created_at: string }[]>();
 
-  for (const payment of payments ?? []) {
-    const paidAt = new Date(payment.created_at);
-    const monthIndex = paidAt.getUTCMonth();
+      if (error) {
+        return null;
+      }
 
-    monthlyStats[monthIndex].amount += payment.amount;
-    monthlyStats[monthIndex].clients.add(payment.project_id);
-    totalClients.add(payment.project_id);
-    totalSales += payment.amount;
+      const monthlyStats: Array<{
+        month: string;
+        amount: number;
+        clients: Set<string>;
+      }> = Array.from({ length: 12 }, (_, index) => ({
+        month: formatMonthLabel(index),
+        amount: 0,
+        clients: new Set<string>(),
+      }));
+
+      const totalClients = new Set<string>();
+      let totalSales = 0;
+
+      for (const payment of payments ?? []) {
+        const paidAt = new Date(payment.created_at);
+        const monthIndex = paidAt.getUTCMonth();
+
+        monthlyStats[monthIndex].amount += payment.amount;
+        monthlyStats[monthIndex].clients.add(payment.project_id);
+        totalClients.add(payment.project_id);
+        totalSales += payment.amount;
+      }
+
+      const currentYear = new Date().getUTCFullYear();
+      const currentMonthIndex = new Date().getUTCMonth();
+
+      return {
+        year,
+        totalSales,
+        totalClients: totalClients.size,
+        clientsThisMonth:
+          year === currentYear ? monthlyStats[currentMonthIndex].clients.size : 0,
+        monthlyStats: monthlyStats.map(({ month, amount, clients }) => ({
+          month,
+          amount,
+          clients: clients.size,
+        })),
+      };
+    })();
+
+    // Set a 3 second timeout for statistics queries
+    const timeoutPromise = new Promise<null>((resolve) => {
+      setTimeout(() => resolve(null), 3000);
+    });
+
+    const result = await Promise.race([statsPromise, timeoutPromise]);
+
+    if (result) {
+      return result;
+    }
+
+    // Timeout occurred - return empty stats
+    return {
+      year,
+      totalSales: 0,
+      totalClients: 0,
+      clientsThisMonth: 0,
+      monthlyStats: Array.from({ length: 12 }, (_, index) => ({
+        month: formatMonthLabel(index),
+        amount: 0,
+        clients: 0,
+      })),
+    };
+  } catch {
+    // Return empty stats on connection errors
+    return {
+      year,
+      totalSales: 0,
+      totalClients: 0,
+      clientsThisMonth: 0,
+      monthlyStats: Array.from({ length: 12 }, (_, index) => ({
+        month: formatMonthLabel(index),
+        amount: 0,
+        clients: 0,
+      })),
+    };
   }
-
-  const currentYear = new Date().getUTCFullYear();
-  const currentMonthIndex = new Date().getUTCMonth();
-
-  return {
-    year,
-    totalSales,
-    totalClients: totalClients.size,
-    clientsThisMonth:
-      year === currentYear ? monthlyStats[currentMonthIndex].clients.size : 0,
-    monthlyStats: monthlyStats.map(({ month, amount, clients }) => ({
-      month,
-      amount,
-      clients: clients.size,
-    })),
-  };
 }
 
 export async function deleteProjectsByYear(year: number) {
-  const supabase = getSupabaseAdmin();
-  const startOfYear = new Date(Date.UTC(year, 0, 1)).toISOString();
-  const startOfNextYear = new Date(Date.UTC(year + 1, 0, 1)).toISOString();
+  try {
+    const supabase = getSupabaseAdmin();
+    const startOfYear = new Date(Date.UTC(year, 0, 1)).toISOString();
+    const startOfNextYear = new Date(Date.UTC(year + 1, 0, 1)).toISOString();
 
-  const { error } = await supabase
-    .from("projects")
-    .delete()
-    .gte("created_at", startOfYear)
-    .lt("created_at", startOfNextYear);
+    const { error } = await supabase
+      .from("projects")
+      .delete()
+      .gte("created_at", startOfYear)
+      .lt("created_at", startOfNextYear);
 
-  if (error) {
-    throw new Error(error.message);
+    if (error) {
+      throw new Error(error.message);
+    }
+  } catch (error) {
+    // Silently fail if Supabase isn't configured
+    // Re-throw only specific errors if needed
   }
 }
 
@@ -192,52 +294,104 @@ function mapPublicProject(row: ProjectRow): PublicProject {
 export async function getProjectByToken(token: string) {
   await cleanupExpiredProjects();
 
-  const supabase = getSupabaseAdmin();
-  const { data, error } = await supabase
-    .from("projects")
-    .select("*")
-    .eq("token", token)
-    .maybeSingle<ProjectRow>();
+  try {
+    const supabase = getSupabaseAdmin();
+    const { data, error } = await supabase
+      .from("projects")
+      .select("*")
+      .eq("token", token)
+      .maybeSingle<ProjectRow>();
 
-  if (error) {
-    throw new Error(error.message);
+    if (error) {
+      return null;
+    }
+
+    return data ? mapProjectRow(data) : null;
+  } catch {
+    return null;
   }
-
-  return data ? mapProjectRow(data) : null;
 }
 
 export async function getPublicProjectByToken(token: string) {
-  await cleanupExpiredProjects();
-
-  const supabase = getSupabaseAdmin();
-  const { data, error } = await supabase
-    .from("projects")
-    .select("*")
-    .eq("token", token)
-    .maybeSingle<ProjectRow>();
-
-  if (error) {
-    throw new Error(error.message);
+  // Skip cleanup if Supabase isn't configured for faster page load
+  if (isSupabaseConfigured()) {
+    await cleanupExpiredProjects();
   }
 
-  return data ? mapPublicProject(data) : null;
+  try {
+    const supabase = getSupabaseAdmin();
+
+    // Create the query with a timeout
+    const queryPromise = (async () => {
+      const { data, error } = await supabase
+        .from("projects")
+        .select("*")
+        .eq("token", token)
+        .maybeSingle<ProjectRow>();
+
+      if (error) {
+        return null;
+      }
+
+      return data ? mapPublicProject(data) : null;
+    })();
+
+    // Set a 2 second timeout for the query
+    const timeoutPromise = new Promise<PublicProject | null>((resolve) => {
+      setTimeout(() => resolve(null), 2000);
+    });
+
+    return await Promise.race([queryPromise, timeoutPromise]);
+  } catch {
+    // Return null on connection errors
+    // This will trigger the "invalid link" message on the project page
+    return null;
+  }
 }
 
 export async function listProjects() {
-  await cleanupExpiredProjects();
-
-  const supabase = getSupabaseAdmin();
-  const { data, error } = await supabase
-    .from("projects")
-    .select("*")
-    .order("created_at", { ascending: false })
-    .returns<ProjectRow[]>();
-
-  if (error) {
-    throw new Error(error.message);
+  // Skip cleanup if Supabase isn't configured for faster page load
+  if (isSupabaseConfigured()) {
+    await cleanupExpiredProjects();
   }
 
-  return (data ?? []).map(mapProjectRow);
+  try {
+    const supabase = getSupabaseAdmin();
+
+    // Create the query with a timeout to prevent slow page loads
+    const queryPromise = (async () => {
+      const { data, error } = await supabase
+        .from("projects")
+        .select("*")
+        .order("created_at", { ascending: false })
+        .returns<ProjectRow[]>();
+
+      if (error) {
+        // If it's a table missing error, throw it so admin page can show setup message
+        if (isSupabaseTableMissingError(error, "projects")) {
+          throw error;
+        }
+        // For other errors (connection issues, invalid credentials), return empty
+        return [];
+      }
+
+      return (data ?? []).map(mapProjectRow);
+    })();
+
+    // Set a 2 second timeout for the project list query
+    const timeoutPromise = new Promise<ProjectRecord[]>((resolve) => {
+      setTimeout(() => resolve([]), 2000);
+    });
+
+    return await Promise.race([queryPromise, timeoutPromise]);
+  } catch (error) {
+    // Re-throw table missing errors, but silently fail on connection errors
+    if (error instanceof Error && isSupabaseTableMissingError(error, "projects")) {
+      throw error;
+    }
+    // Return empty projects list if Supabase isn't configured yet
+    return [];
+  }
 }
 
 export async function createProject(input: CreateProjectInput) {

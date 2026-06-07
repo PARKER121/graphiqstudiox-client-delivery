@@ -77,12 +77,20 @@ export default async function AdminStatsPage() {
               >
                 Back to dashboard
               </Link>
-              <Link
-                href={`/api/admin/report?year=${new Date().getUTCFullYear()}`}
-                className="inline-flex rounded-full bg-[var(--foreground)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow)]"
-              >
-                Download yearly report
-              </Link>
+              <div className="flex gap-3 flex-col sm:flex-row">
+                <Link
+                  href={`/api/admin/report?year=${new Date().getUTCFullYear()}&format=csv`}
+                  className="inline-flex rounded-full border border-[var(--line)] bg-white/75 px-5 py-3 text-sm font-semibold text-[var(--foreground)]"
+                >
+                  Download CSV
+                </Link>
+                <Link
+                  href={`/api/admin/report?year=${new Date().getUTCFullYear()}&format=pdf`}
+                  className="inline-flex rounded-full bg-[var(--foreground)] px-5 py-3 text-sm font-semibold text-white shadow-[var(--shadow)]"
+                >
+                  Download PDF
+                </Link>
+              </div>
             </div>
           </div>
 

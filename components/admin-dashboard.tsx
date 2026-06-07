@@ -277,6 +277,7 @@ export function AdminDashboard({
                 min="1"
                 max="3"
                 step="1"
+                placeholder="Download limit"
                 defaultValue="3"
                 className="rounded-2xl border border-[var(--line)] bg-white px-4 py-3 text-sm outline-none focus:border-[var(--accent)] focus:ring-4 focus:ring-teal-100"
               />

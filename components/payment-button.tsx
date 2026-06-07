@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface PaymentButtonProps {
   amount: number;
@@ -11,11 +11,9 @@ interface PaymentButtonProps {
   token: string;
 }
 
-function generateReference(token: string) {
-  if (typeof window !== "undefined" && "randomUUID" in window.crypto) {
-    return `proj_${token.slice(0, 8)}_${window.crypto.randomUUID()}`;
-  }
-
+function generateReference(token: string): string {
+  // Always use Math.random for consistent reference generation
+  // This avoids hydration mismatches between server and client
   return `proj_${token.slice(0, 8)}_${Math.random().toString(36).slice(2, 12)}`;
 }
 

@@ -54,10 +54,12 @@ select {
 @keyframes unlockFade {
   0% {
     opacity: 1;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
   100% {
     opacity: 0;
+    -webkit-backdrop-filter: blur(0);
     backdrop-filter: blur(0);
   }
 }

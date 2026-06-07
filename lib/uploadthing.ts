@@ -61,9 +61,11 @@ export async function createDeliverableDownloadUrl(reference: DeliverableReferen
     return reference.url;
   }
 
-  return getUtapi().generateSignedURL(reference.key, {
+  const { ufsUrl } = await getUtapi().generateSignedURL(reference.key, {
     expiresIn: 60 * 10,
   });
+
+  return ufsUrl;
 }
 
 export async function deleteDeliverableFile(reference: DeliverableReference) {
