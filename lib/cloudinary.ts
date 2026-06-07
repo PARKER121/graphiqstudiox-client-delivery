@@ -23,7 +23,6 @@ export async function uploadPreviewToCloudinary(file: File, token: string) {
   
   const timestamp = Math.floor(Date.now() / 1000);
   const paramsToSign: Record<string, string | number> = {
-    api_key: config.apiKey,
     folder: "graphiq-studiox/previews",
     public_id: `${token}-${file.name.replace(/\s+/g, "-").toLowerCase()}`,
     resource_type: "auto",
@@ -53,7 +52,10 @@ export async function uploadPreviewToCloudinary(file: File, token: string) {
     );
 
     if (!response.ok) {
-      throw new Error(`Cloudinary upload failed: ${response.statusText}`);
+      const body = await response.text();
+      throw new Error(
+        `Cloudinary upload failed: ${response.statusText} - ${body}`,
+      );
     }
 
     const result = (await response.json()) as { secure_url?: string };
